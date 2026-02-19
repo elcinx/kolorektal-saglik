@@ -139,23 +139,21 @@ npx eas-cli build --platform ios --profile production
 
 ## Hocalar Icin APK Dagitimi (GitHub Release)
 
-Hocalarin uygulamayi kolayca indirip kurabilmesi icin `APK` dosyasini repo icine degil, GitHub `Release` alanina yukleyin.
+Hocalarin uygulamayi kolayca indirip kurabilmesi icin repo artik otomatik APK uretir ve GitHub `Release` alanina yukler.
 
-1. APK olusturun:
+Direkt indirme:
 
-```bash
-npm run build:apk
-```
+`https://github.com/elcinx/kolorektal-saglik/releases/latest/download/app-debug.apk`
 
-2. Build tamamlandiginda EAS size `.apk` indirme linki verir. Dosyayi indirin.
+Calisma mantigi:
 
-3. GitHub repo sayfasinda:
-- `Releases` -> `Draft a new release`
-- Tag olusturun (ornek: `v1.0.0`)
-- APK dosyasini `Attach binaries` ile ekleyin
-- `Publish release`
+1. `main` branchine her push sonrasi GitHub Actions Android debug APK build alir.
+2. Build ciktisi `latest-apk` release tagine `app-debug.apk` olarak otomatik yuklenir.
+3. Hocalar yukaridaki tek linkten en guncel APK dosyasini indirebilir.
 
-4. README icine release linkini ekleyin ki hocalar direkt indirebilsin.
+Not:
+- Ilk APK'nin olusmasi icin bu degisikligin GitHub'a pushlanmasi ve workflow'un bir kez calismasi gerekir.
+- Workflow durumu repo icindeki `Actions` sekmesinden izlenebilir.
 
 ## Bilinen Notlar
 
