@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "Kolorektal Sağlık",
+    "slug": "kolorektal-saglik-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#E8F5E9"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kolorektalsaglik.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E8F5E9"
+      },
+      "package": "com.kolorektalsaglik.app"
+    }
+  }
+}
