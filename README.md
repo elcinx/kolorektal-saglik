@@ -137,9 +137,9 @@ npx eas-cli build --platform android --profile production
 npx eas-cli build --platform ios --profile production
 ```
 
-## Hocalar Icin APK Dagitimi (GitHub Release)
+## APK Dagitimi (GitHub Release)
 
-Hocalarin uygulamayi kolayca indirip kurabilmesi icin repo artik otomatik APK uretir ve GitHub `Release` alanina yukler.
+Uygulamanin kolayca indirip kurabilmesi icin repo artik otomatik APK uretir ve GitHub `Release` alanina yukler.
 
 Direkt indirme:
 
