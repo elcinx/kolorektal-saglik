@@ -122,20 +122,19 @@ Bu surumde backend baglantisi yoktur. Veriler cihazda yerel olarak saklanir:
 1. EAS CLI kurulum:
 
 ```bash
-npm install -g eas-cli
-eas login
+npx eas-cli login
 ```
 
 2. Android build:
 
 ```bash
-eas build --platform android --profile production
+npx eas-cli build --platform android --profile production
 ```
 
 3. iOS build:
 
 ```bash
-eas build --platform ios --profile production
+npx eas-cli build --platform ios --profile production
 ```
 
 ## Hocalar Icin APK Dagitimi (GitHub Release)
