@@ -149,7 +149,7 @@ Calisma mantigi:
 
 1. `main` branchine her push sonrasi GitHub Actions Android debug APK build alir.
 2. Build ciktisi `latest-apk` release tagine `app-debug.apk` olarak otomatik yuklenir.
-3. Hocalar yukaridaki tek linkten en guncel APK dosyasini indirebilir.
+3. Yukaridaki tek linkten en guncel APK dosyasini indirilebilir.
 
 Not:
 - Ilk APK'nin olusmasi icin bu degisikligin GitHub'a pushlanmasi ve workflow'un bir kez calismasi gerekir.
