@@ -1,78 +1,158 @@
-# Kolorektal Sağlık Uygulaması
+﻿# Kolorektal Saglik Uygulamasi
 
-Kolorektal kanser hastaları ve yakınları için geliştirilmiş mobil sağlık uygulaması.
+Kolorektal Saglik Uygulamasi; kolorektal kanser hastalari, hasta yakinlari ve saglik profesyonelleri icin gelistirilmis, bilgilendirme ve gunluk takip odakli bir mobil uygulamadir.
 
-## Özellikler
+Uygulama; kullanici girisi, belirti takibi, laboratuvar kayitlari, uzmana soru sorma, hasta deneyimleri ve yonetsel admin ekranlari gibi modullerle tek bir akista calisir.
 
-- ✅ Kullanıcı girişi ve kayıt sistemi
-- ✅ Kolorektal kanser hakkında bilgilendirme
-- ✅ COVID-19 bilgilendirme
-- ✅ Belirti yönetimi ve takibi
-- ✅ Belirti takvimi
-- ✅ Uzmana soru sorma
-- ✅ Hasta deneyimi paylaşımı
-- ✅ Kan tahlili kayıt ve takibi
-- ✅ Beslenme ve yaşam önerileri
-- ✅ İletişim formu
-- ✅ Admin/Hemşire paneli
+## Projenin Amaci
 
-## Teknolojiler
+- Hastalarin hastalik surecini daha duzenli takip etmesini saglamak
+- Bilgilendirme iceriklerine tek yerden hizli erisim sunmak
+- Belirti, tahlil ve deneyim verilerini uygulama icinde kayit altina almak
+- Uzman ile iletisim surecini dijital olarak desteklemek
 
-- React Native
-- Expo
-- React Navigation
-- React Native Paper
-- AsyncStorage
+## Temel Ozellikler
+
+- Kullanici kayit ve giris sistemi
+- Kolorektal kanser bilgilendirme ekrani
+- COVID-19 bilgilendirme ekrani
+- Belirti yonetimi ve belirti takvimi
+- Kan tahlili kaydi ve tahlil detay goruntuleme
+- Uzmana soru sorma ve soru detay akisi
+- Hasta deneyimi paylasim alani
+- Beslenme ve yasam onerileri
+- Iletisim ve hakkimizda ekranlari
+- Admin paneli, admin sorular ve admin kullanicilar ekranlari
+
+## Teknoloji Yigini
+
+- `React Native` (mobil uygulama)
+- `Expo` (gelistirme ve build altyapisi)
+- `React Navigation` (ekran gecisleri)
+- `React Native Paper` (UI bilesenleri)
+- `AsyncStorage` (yerel veri saklama)
+- `expo-linear-gradient`, `expo-font`, `@expo/vector-icons`
+
+## Mimari Ozet
+
+Uygulama iki ana navigasyon akisina ayrilir:
+
+- `AuthNavigator`: Giris ve kayit ekranlari
+- `MainNavigator`: Uygulamanin ana modulleri
+
+Kullanici oturumu `AuthContext` icinde yonetilir. Giris bilgisi ve bazi modullerdeki veri, cihazda `AsyncStorage` ile saklanir.
+
+## Proje Klasor Yapisi
+
+```text
+src/
+  context/        -> Uygulama durumu (AuthContext)
+  navigation/     -> Auth ve Main navigator tanimlari
+  screens/
+    about/        -> Hakkimizda
+    admin/        -> Admin ekranlari
+    auth/         -> Giris / Kayit
+    contact/      -> Iletisim
+    experience/   -> Hasta deneyimleri
+    info/         -> Bilgilendirme ekranlari
+    labs/         -> Kan tahlili ekranlari
+    main/         -> Dashboard
+    questions/    -> Uzmana sor modulu
+    recommendations/ -> Oneriler
+    symptoms/     -> Belirti yonetimi ve takvimi
+  theme/          -> Uygulama temasi
+```
 
 ## Kurulum
 
-1. Bağımlılıkları yükleyin:
+Gereksinimler:
+
+- Node.js 18+
+- npm 9+
+- Expo Go (telefon/tablet)
+
+Adimlar:
+
+1. Bagimliliklari yukleyin:
+
 ```bash
 npm install
 ```
 
-2. Uygulamayı başlatın:
+2. Uygulamayi baslatin:
+
 ```bash
 npm start
 ```
 
-3. Expo Go uygulaması ile QR kodu tarayın veya:
-- iOS için: `npm run ios`
-- Android için: `npm run android`
+3. Ayni agdaki mobil cihazdan Expo Go ile QR kodu okutun.
 
-## Admin Girişi
+Not: Ag problemi yasarsaniz su komut daha stabil calisir:
 
-Admin paneline erişmek için:
+```bash
+npx expo start --tunnel --port 8085
+```
+
+## NPM Scriptleri
+
+- `npm start` -> Expo development server (`--port 8085`)
+- `npm run android` -> Android emulator/cihaz
+- `npm run ios` -> iOS simulator (macOS)
+- `npm run web` -> Web preview
+
+## Demo Giris Bilgisi
+
+Admin ekranlarini test etmek icin:
+
 - E-posta: `admin@kolorektal.com`
-- Parola: Herhangi bir parola (demo amaçlı)
+- Parola: Herhangi bir deger (demo akis)
 
-## Lisans
+## Veri Saklama
 
-Bu proje eğitim amaçlıdır.
+Bu surumde backend baglantisi yoktur. Veriler cihazda yerel olarak saklanir:
 
-## Üretim için APK/IPA (EAS) oluşturma
+- Oturum bilgisi: `user`
+- Belirti takvimi: `belirtiTakvimi`
+- Uzmana sorular: `uzmanaSorular`
+- Hasta deneyimleri: `hastaDeneyimleri`
+- Kan tahlilleri: `kanTahlilleri`
 
-1. Expo Application Services (EAS) kurulumu:
+## Uretim Build (EAS)
+
+1. EAS CLI kurulum:
 
 ```bash
 npm install -g eas-cli
 eas login
 ```
 
-2. Proje yapılandırması (zaten ekli): `eas.json`.
-
-3. Android için üretim AAB oluşturma:
+2. Android build:
 
 ```bash
 eas build --platform android --profile production
 ```
 
-4. iOS için (macOS ve Apple hesap bilgisi gerek):
+3. iOS build:
 
 ```bash
 eas build --platform ios --profile production
 ```
 
-Notlar:
-- EAS ile uygulama imzalama, keystore ve Apple kimlik bilgileri gerektirir; eas-cli sizi adım adım yönlendirecektir.
-- Eğer isterseniz ben `eas build` komutlarını sizin hesabınızda çalıştırmanızı kolaylaştırmak için `eas` config ve roller oluşturabilirim.
+## Bilinen Notlar
+
+- Proje su anda demo amaclidir.
+- Kimlik dogrulama backend yerine lokal akista calisir.
+- Uretim icin API, guvenli auth, validasyon ve test katmani eklenmelidir.
+
+## Yol Haritasi (Oneri)
+
+- JWT tabanli gercek kimlik dogrulama
+- Doktor/Hemsire rolleri icin yetkilendirme
+- Bulut veritabani entegrasyonu
+- Bildirim altyapisi
+- Form validasyon ve hata yonetimi iyilestirmeleri
+- Birim ve entegrasyon testleri
+
+## Lisans
+
+Bu proje egitim ve prototipleme amacli gelistirilmistir.
