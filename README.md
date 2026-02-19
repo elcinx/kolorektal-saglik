@@ -138,6 +138,26 @@ eas build --platform android --profile production
 eas build --platform ios --profile production
 ```
 
+## Hocalar Icin APK Dagitimi (GitHub Release)
+
+Hocalarin uygulamayi kolayca indirip kurabilmesi icin `APK` dosyasini repo icine degil, GitHub `Release` alanina yukleyin.
+
+1. APK olusturun:
+
+```bash
+npm run build:apk
+```
+
+2. Build tamamlandiginda EAS size `.apk` indirme linki verir. Dosyayi indirin.
+
+3. GitHub repo sayfasinda:
+- `Releases` -> `Draft a new release`
+- Tag olusturun (ornek: `v1.0.0`)
+- APK dosyasini `Attach binaries` ile ekleyin
+- `Publish release`
+
+4. README icine release linkini ekleyin ki hocalar direkt indirebilsin.
+
 ## Bilinen Notlar
 
 - Proje su anda demo amaclidir.
